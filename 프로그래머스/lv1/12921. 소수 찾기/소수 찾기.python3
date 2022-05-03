@@ -1,0 +1,9 @@
+def solution(n):
+    sosu=set(range(2,n+1))  #2~n까지의 수를 모두 소수라고 가정한다.
+
+    for i in range(2,n+1): #2부터 n까지의 수중에서 소수를 찾을것이다.
+        if i in sosu:
+            sosu-=set(range(i*2,n+1,i))
+
+
+    return len(sosu)
