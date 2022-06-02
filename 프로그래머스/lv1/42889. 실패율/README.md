@@ -1,3 +1,9 @@
+'''
+1. 스테이지 N와 사용자의 현재 위치 stages 입력받음
+2. for문으로 스테이지 N번 반복하며 현재 그 위치에 있는 사용자 cnt
+3. 실패율 구한후 배열에 넣기
+4. 정렬후 key값 리스트로 만들기
+'''
 # [level 1] 실패율 - 42889 
 
 [문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42889) 
