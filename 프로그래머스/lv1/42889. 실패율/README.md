@@ -1,3 +1,4 @@
+https://jeongchul.tistory.com/653 참고
 '''
 1. 스테이지 N와 사용자의 현재 위치 stages 입력받음
 2. for문으로 스테이지 N번 반복하며 현재 그 위치에 있는 사용자 cnt
