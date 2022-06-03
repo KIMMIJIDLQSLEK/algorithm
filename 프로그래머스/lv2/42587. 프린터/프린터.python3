@@ -1,0 +1,18 @@
+def solution(priorites,location):
+    cnt=0
+    
+    while(1):
+        if location<0:
+            location=len(priorites)-1
+
+        if location==0 and priorites[0]==max(priorites):
+            return cnt+1
+
+        if priorites[0]<max(priorites[1:]):
+            priorites.append(priorites[0])
+           
+        else:
+            cnt+=1
+
+        priorites.pop(0)
+        location-=1
