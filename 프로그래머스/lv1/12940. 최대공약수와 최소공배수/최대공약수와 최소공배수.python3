@@ -1,0 +1,31 @@
+def solution(n,m):
+    #최대공약수
+    '''
+    작은값까지 n,m이 나뉘어지면 최대공약수로 구하기 
+
+    '''
+    max_num=0
+    for i in range(1,min(n,m)+1):
+        if n%i==0 and m%i==0:
+            max_num=i
+
+
+    #최소공배수
+    '''
+    n,m중 큰값이 작은값으로 나뉘어지면 작은값 최소공배수
+    아니면 큰값을 1부터 곱하며 작은값으로 나뉘어질경우 break
+    '''
+    min_num=0
+    if max(n,m)%min(m,n)==0:
+        min_num=max(n,m)
+    else:
+        index=1
+        while(1):
+            if (max(n,m)*index)%min(n,m)==0:
+                min_num=max(n,m)*index
+                break;
+            else:
+                index+=1
+
+    return [max_num,min_num]
+
