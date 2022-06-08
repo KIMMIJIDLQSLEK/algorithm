@@ -1,0 +1,39 @@
+def solution(s):
+    min_len=len(s)
+    answer=s
+    #s/2길이만큼 for문으로 돌리기=>unit: 단위를 뜻함
+    for unit in range(1,(len(s)//2)+1):
+        #forward와 next index로 문자열 중복되는지 확인할것
+        forward_index=0
+        next_index=unit
+        cnt=1
+        new=""
+        
+
+        #while문으로 next=s의 길이-1까지 반복
+        while(next_index<=len(s)-1):
+            #forward와 next의 index가 지정하는 문자열이 같을경우-next index 위치 변경&개수
+            if s[forward_index:forward_index+unit]==s[next_index:next_index+unit]:
+                cnt+=1
+                next_index+=unit
+            #다를경우-new문자열에 추가&farward,next index변경
+            else:
+                if cnt!=1:
+                    new+=(str(cnt)+s[forward_index:forward_index+unit])
+                else: 
+                    new+=s[forward_index:forward_index+unit]
+                forward_index=next_index
+                next_index+=unit
+                cnt=1
+
+        #while문 끝나면 나머지 수 처리
+        if cnt!=1:
+                new+=(str(cnt)+s[forward_index:forward_index+unit])
+        else: 
+            new+=s[forward_index:forward_index+unit]
+    #new문자열 구한후 최솟값 구하기
+        if len(new)<min_len:
+            min_len=len(new)
+            
+
+    return min_len
