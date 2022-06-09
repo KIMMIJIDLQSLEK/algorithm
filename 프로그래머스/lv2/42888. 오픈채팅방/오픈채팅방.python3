@@ -1,0 +1,24 @@
+
+def solution(record):
+    inout_list=[]
+    id_nickname={}
+    answer=[]
+    for info in record:
+        inout=info.split(" ")[0]
+        id=info.split(" ")[1]
+        try:
+            nickname=info.split(" ")[2]
+            if inout!="Change":
+                inout_list.append([inout,id])
+            id_nickname[id]=nickname
+        except:
+            inout_list.append([inout,id])
+    
+    for inout,id in inout_list:
+        if inout=="Enter":
+            answer.append(f"{id_nickname[id]}님이 들어왔습니다.")
+        
+        else:
+            answer.append(f"{id_nickname[id]}님이 나갔습니다.")
+
+    return answer
