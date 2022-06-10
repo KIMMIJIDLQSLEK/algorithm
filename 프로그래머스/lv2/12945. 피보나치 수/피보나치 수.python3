@@ -1,0 +1,9 @@
+def solution(n):
+    now_index=2
+    fibonacci_list=[0,1]
+    while(1):
+        fibonacci_list.append(fibonacci_list[now_index-1]+fibonacci_list[now_index-2])
+        if now_index==n:
+            return fibonacci_list[n]%1234567
+
+        now_index+=1
