@@ -1,0 +1,13 @@
+def solution(sizes):
+    max_width=0
+    max_vertical=0
+    for w,v in sizes:
+        if w<v:
+            w,v=v,w
+        
+        if max_width<w:
+            max_width=w
+        if max_vertical<v:
+            max_vertical=v
+    return max_width*max_vertical
+    
