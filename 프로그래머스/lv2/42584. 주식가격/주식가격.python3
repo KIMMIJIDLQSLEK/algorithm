@@ -7,7 +7,6 @@ def solution(prices):
                 result.append(j-i)
                 flag=1
                 break;
-        if flag==1:
-            continue;
-        result.append(len(prices)-1-i)
+        if flag!=1:
+            result.append(len(prices)-1-i)
     return result
