@@ -1,19 +1,19 @@
 #올바른 괄호 문자열 여부 확인 함수
-def correct_괄호(u):
-    while(len(u)>0):
-        start=len(u)
-        u=u.replace("()","")
-        end=len(u)
+def correct_괄호(s):
+    while(len(s)>0):
+        start=len(s)
+        s=s.replace("()","")
+        end=len(s)
         if start==end:
             return False
     return True
 
 #균형잡힌 괄호 문자열 구하는 함수
-def balance_괄호(w):
+def balance_괄호(s):
     cnt_list=[0,0]
     index=0
-    for i in range(len(w)):
-        if w[i]=="(":
+    for i in range(len(s)):
+        if s[i]=="(":
             cnt_list[0]+=1
         else:
             cnt_list[1]+=1
@@ -22,8 +22,8 @@ def balance_괄호(w):
             index=i
             break;
 
-    u=w[:index+1]
-    v=w[index+1:]
+    u=s[:index+1]
+    v=s[index+1:]
     #(의 개수와 )의 개수 동일할때까지 u와 v분리해서 return
     return [u,v]
 
@@ -44,7 +44,7 @@ def change_괄호(w):
             else:
                 u[i]="("
         u=''.join(u)
-        
+
         return new_string+u
 
 
