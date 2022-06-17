@@ -1,0 +1,58 @@
+#올바른 괄호 문자열 여부 확인 함수
+def correct_괄호(u):
+    while(len(u)>0):
+        start=len(u)
+        u=u.replace("()","")
+        end=len(u)
+        if start==end:
+            return False
+    return True
+
+#균형잡힌 괄호 문자열 구하는 함수
+def balance_괄호(w):
+    cnt_list=[0,0]
+    index=0
+    for i in range(len(w)):
+        if w[i]=="(":
+            cnt_list[0]+=1
+        else:
+            cnt_list[1]+=1
+
+        if cnt_list[0]==cnt_list[1]:
+            index=i
+            break;
+
+    u=w[:index+1]
+    v=w[index+1:]
+    #(의 개수와 )의 개수 동일할때까지 u와 v분리해서 return
+    return [u,v]
+
+def change_괄호(w):
+    if len(w)==0:
+        return w
+    u,v=balance_괄호(w)
+    if correct_괄호(u): #True일경우
+        return u+change_괄호(v)
+    
+    else: #False일경우
+        new_string="("+change_괄호(v)+")"
+        u=list(u[1:-1])       
+
+        for i in range(len(u)):
+            if u[i]=="(":
+                u[i]=")"
+            else:
+                u[i]="("
+        u=''.join(u)
+        
+        return new_string+u
+
+
+def solution(p):
+    #올바른 괄호 문자열일경우
+    if correct_괄호(p):
+        return p
+    #올바른 괄호 문장열이 아닐경우
+    else:
+        return change_괄호(p)
+    
