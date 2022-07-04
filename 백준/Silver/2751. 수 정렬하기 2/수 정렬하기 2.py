@@ -1,3 +1,9 @@
+#입력
+#병합정렬- 분할 후 병합
+#출력
+
+
+
 #병합
 def merge(array1,array2):
     array1_len=len(array1)
@@ -14,10 +20,14 @@ def merge(array1,array2):
             index2+=1
 
     if index1==array1_len:
-        result+=array2[index2:]
+        while(index2<array2_len):
+            result.append(array2[index2])
+            index2+=1
 
     if index2==array2_len:
-        result+=array1[index1:]
+        while(index1<array1_len):
+            result.append(array1[index1])
+            index1+=1
     
     return result
 
