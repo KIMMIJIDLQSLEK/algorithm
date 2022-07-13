@@ -9,7 +9,7 @@ def BFS(y,x):
     dx=[-1,1,0,0] #왼,오,위,아래
     dy=[0,0,-1,1] #왼,오,위,아래
     queue=[]
-    queue.append((y,x))
+    queue.append([y,x])
     while queue: #queue가 있을경우
         y,x=queue.pop(0)
         for i in range(4):
