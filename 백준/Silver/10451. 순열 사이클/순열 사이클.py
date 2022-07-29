@@ -1,6 +1,3 @@
-import sys
-sys.setrecursionlimit(10**6)
-
 test=int(input())
 
 def dfs(graph,node,visited):
