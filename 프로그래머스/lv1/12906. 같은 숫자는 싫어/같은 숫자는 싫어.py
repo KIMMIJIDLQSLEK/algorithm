@@ -6,7 +6,7 @@ def solution(arr):
     answer=[arr[0]]
     while queue:
         num=queue.popleft()
-        if answer[len(answer)-1]!=num:
+        if answer[-1]!=num:
             answer.append(num)
 
     return answer
