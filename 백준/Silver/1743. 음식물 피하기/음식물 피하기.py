@@ -1,7 +1,7 @@
-#dfs
+#bfs
 #n,m,k 입력
 #k만큼 반복하여 음식물 좌표 입력
-#dfs이용하여 음식물 크기 확인후 max일경우 저장
+#bfs이용하여 음식물 크기 확인후 size return
 from collections import deque
 
 
