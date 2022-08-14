@@ -1,8 +1,9 @@
 def solution(n,lost,reverse):
-    participants=n-len(lost)
     
-    new_lost=list(lost-reverse)
-    new_reverse=list(reverse-lost)
+    new_lost=set(lost)-set(reverse) #set의 차집합 허용
+    new_reverse=set(reverse)-set(lost)
+
+    participants=n-len(new_lost)
 
     for clothes in sorted(new_lost):
         if clothes-1 in new_reverse:
