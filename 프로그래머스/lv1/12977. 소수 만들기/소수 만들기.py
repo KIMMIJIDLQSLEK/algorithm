@@ -18,4 +18,5 @@ def solution(nums):
                 if sosu:
                     cnt+=1
 
+                    
     return cnt
