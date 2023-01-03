@@ -5,7 +5,7 @@ class Solution {
         int denum=denum1*num2+denum2*num1;
         //분모 구하기
         int num=num1*num2;
-        //분자와 분모의 공배수 구하기
+        //분자와 분모의 최대공약수 구하기
         int min_num=0;
         if(denum<num){
             min_num=denum;
