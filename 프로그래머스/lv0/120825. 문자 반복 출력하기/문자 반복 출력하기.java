@@ -1,11 +1,11 @@
 class Solution {
     public String solution(String my_string, int n) {
-        char[] strArray=my_string.toCharArray();
-        
+        String[] strArray=my_string.split("");
         String answer="";
-        for(char c:strArray){
+
+        for(String str:strArray){
             for(int i=0;i<n;i++){
-                answer+=c;
+                answer+=str;
             }
         }
         return answer;
