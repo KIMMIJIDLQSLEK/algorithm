@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Solution {
-    public ArrayList solution(int[] answers) {
+    public int[] solution(int[] answers) {
         int[] person1={1,2,3,4,5};
         int[] person2={2,1,2,3,2,4,2,5};
         int[] person3={3,3,1,1,2,2,4,4,5,5};
@@ -27,14 +27,14 @@ class Solution {
             }
         }
         
-        ArrayList answer=new ArrayList();
+        ArrayList<Integer> answer=new ArrayList();
         for(int i=0;i<3;i++){
             if(maxx==grade[i]){
                 answer.add(i+1);
             }
         }
         
-    
-        return answer;
+       return answer.stream().mapToInt(i->i.intValue()).toArray();
+
     }
 }
