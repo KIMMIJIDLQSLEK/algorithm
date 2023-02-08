@@ -5,12 +5,8 @@ class Solution {
             int len=s.replace("0","").length();
             result[0]++;
             result[1]+=s.length()-len;
-
-            String binaryString="";
-            while(len!=0){
-                binaryString+=Integer.toString(len%2);
-                len/=2;
-            }
+            
+            String binaryString=Integer.toBinaryString(len);
             s=binaryString;
         }
         
