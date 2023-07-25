@@ -8,11 +8,11 @@ public class Solution {
         
         for(int i=0;i<a.length();i++){
             char alphabet=a.charAt(i);
-            if(alphabet>='a' && alphabet<='z'){
-                answer+=(char)(alphabet-('a'-'A'));
+            if(Character.isUpperCase(alphabet)){
+                answer+=Character.toLowerCase(alphabet);
             }
             else{
-                answer+=(char)(alphabet+('a'-'A'));
+                answer+=Character.toUpperCase(alphabet);
             }
         }
         System.out.println(answer);
